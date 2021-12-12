@@ -72,28 +72,28 @@ class categorical_handler:
 
 
     def mean_Encoding_with_Target_Column(self,categorical_features,label):
-            """
-                This method will encode the categorical feature into numerical by considering it's mean with respect to label
-                column entered.
-                ********************************************************************
-                categorical_features= List of categorical features in your dataset
-                label=The label column or the target column of your dataset
-                ********************************************************************
-                example-
-                categorical_features=['column_name1','column_name2']
-                label=result
-            """
-            try:
-                categorical_features=categorical_features
-                target_column=label
-                df=self.dataframe
-                for i in range(len(categorical_features)):
-                    encoded_mean_dict=df.groupby([categorical_features[i]]).mean()[target_column].to_dict()
-                    df[categorical_features[i]+"_mean_encoded"]=df[categorical_features[i]].map(encoded_mean_dict)
-                    df=df.drop(columns=categorical_features[i])
-                return df
-            except Exception as e:
-                raise Exception("Error occured while performing mean encoding with respect to target column{0}".format(str(e)))
+        """
+            This method will encode the categorical feature into numerical by considering it's mean with respect to label
+            column entered.
+            ********************************************************************
+            categorical_features= List of categorical features in your dataset
+            label=The label column or the target column of your dataset
+            ********************************************************************
+            example-
+            categorical_features=['column_name1','column_name2']
+            label=result
+        """
+        try:
+            categorical_features=categorical_features
+            target_column=label
+            df=self.dataframe
+            for i in range(len(categorical_features)):
+                encoded_mean_dict=df.groupby([categorical_features[i]]).mean()[target_column].to_dict()
+                df[categorical_features[i]+"_mean_encoded"]=df[categorical_features[i]].map(encoded_mean_dict)
+                df=df.drop(columns=categorical_features[i])
+            return df
+        except Exception as e:
+            raise Exception("Error occured while performing mean encoding with respect to target column{0}".format(str(e)))
 
 if __name__=="__main__":
     test = categorical_handler()
