@@ -11,7 +11,7 @@ setup(
    long_description=long_description,
    author='Atul Rai',
    author_email='iamatul1214@gmail.com',
-   url="https://github.com/iamatul1214/catergorical_dataset_handling",
+   url="https://github.com/iamatul1214/CatDealer",
     packages=['Cat_Dealer'],
     #No requirement of external packages as dependencies
     classifiers=['Programming Language :: Python :: 3.8',
