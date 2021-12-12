@@ -72,7 +72,7 @@ class categorical_handler:
 
 
     def mean_Encoding_with_Target_Column(self,categorical_features,label):
-        try:
+
             """
                 This method will encode the categorical feature into numerical by considering it's mean with respect to label
                 column entered.
@@ -84,6 +84,7 @@ class categorical_handler:
                 categorical_features=['column_name1','column_name2']
                 label=result
             """
+            try:
             categorical_features=categorical_features
             target_column=label
             df=self.dataframe
