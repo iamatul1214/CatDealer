@@ -95,5 +95,6 @@ class categorical_handler:
         except Exception as e:
             raise Exception("Error occured while performing mean encoding with respect to target column{0}".format(str(e)))
 
-
+if __name__=="__main__":
+    test = categorical_handler()
 
